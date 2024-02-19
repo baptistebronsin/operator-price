@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Meilleur Prix</title>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="bulle_informations">
+            <p class="titre">Comparateur de prix</p>
+            <div class="contenu">
+                <p>Est-ce que ce téléphone est rentable avec ou sans forfait ?</p>
+                <div class="section" style="border: 2px solid lightblue;">
+                    <p class="section_center" style="background-color: lightblue; padding: 10px 0; margin-top: 0;">Avec opérateur</p>
+                    <p class="section_center" style=" padding: 10px 0; margin-top: 0;">Prix</p>
+                    <p class="section_center" style="padding: 10px 0; margin-top: 0;">Description</p>
+
+                    <div style="display: flex; align-items: center;">
+                        <p>Prix du forfait par mois les 12 premiers mois</p>
+                    </div>
+                    <p class="section_center"><input type="number" min="0" id="prix_operateur_0-12" oninput="calcul_conclusion()" style="background-color: lightblue;"> €</p>
+                    <p>Le forfait est souvent moins cher si vous êtes déjà client box chez l'opérateur.</p>
+
+                    <div style="display: flex; align-items: center;">
+                        <p>Prix du forfait par mois les 12 mois suivants</p>
+                    </div>
+                    <p class="section_center"><input type="number" min="0" id="prix_operateur_12-24" oninput="calcul_conclusion()" style="background-color: lightblue;"> €</p>
+                    <p></p>
+
+                    <div style="display: flex; align-items: center;">
+                        <p>Coût du téléphone 📱</p>
+                    </div>
+                    <p class="section_center"><input type="number" min="0" id="prix_operateur_telephone" oninput="calcul_conclusion()" style="background-color: lightblue;"> €</p>
+                    <p>Le prix du téléphone avec l'offre de l'opérateur.</p>
+
+                    <div style="display: flex; align-items: center;">
+                        <p>Coût mensuel de l'étalement de paiement du téléphone 🤑</p>
+                    </div>
+                    <p class="section_center"><input type="number" min="0" id="prix_operateur_etalement" oninput="calcul_conclusion()" style="background-color: lightblue;"> €</p>
+                    <p>À remplir uniquement s'il y a un étalement de paiement.</p>
+
+                    <div style="display: flex; align-items: center;">
+                        <p>Nombre de mois pour l'étalement de paiement</p>
+                    </div>
+                    <p class="section_center"><input type="number" min="0" id="prix_operateur_duree_etalement" oninput="calcul_conclusion()" style="background-color: lightblue;"> €</p>
+                    <p></p>
+                </div>
+                <div class="section" style="border: 2px solid lightgreen;">
+                    <p class="section_center" style="background-color: lightgreen; padding: 10px 0; margin-top: 0;">Sans opérateur</p>
+                    <p class="section_center" style=" padding: 10px 0; margin-top: 0;">Prix</p>
+                    <p class="section_center" style="padding: 10px 0; margin-top: 0;">Description</p>
+
+                    <div style="display: flex; align-items: center;">
+                        <p>Prix du téléphone dans le commerce</p>
+                    </div>                    
+                    <p class="section_center"><input type="number" min="0" id="prix_telephone_classique" oninput="calcul_conclusion()" style="background-color: lightgreen;"> €</p>
+                    <p>Le meilleur prix que vous avez trouvé pour le modèle que vous souhaitez acheter.</p>
+
+                    <div style="display: flex; align-items: center;">
+                        <p>Prix d'un forfait sans engagement</p>
+                    </div>
+                    <p class="section_center"><input type="number" min="0" id="prix_operateur_classique" oninput="calcul_conclusion()" style="background-color: lightgreen;"> €</p>
+                    <p>Le meilleur forfait sans engagement que vous avez trouvé pour vos besoins.</p>                    
+                </div>
+                <div style="border: 2px solid lightcoral; margin-top: 30px;">
+                    <p class="section_center" style="background-color: lightcoral; padding: 10px 0; margin-top: 0;">Conclusion</p>
+                    <div style="display: grid; grid-template-columns: 4fr 3fr;">
+                        <div style="display: grid; grid-template-rows: 1fr 1fr 1fr;">                            
+                            <div style="display: grid; grid-template-columns: 3fr 1fr;">
+                                <div style="display: flex; align-items: center;">
+                                    <p>Offre de l'opérateur</p>
+                                </div>                                
+                                <p class="section_center" style="background-color: lightcoral; display: flex; align-items: center; justify-content: center;" id="prix_operateur_final"></p>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 3fr 1fr;">
+                                <div style="display: flex; align-items: center;">
+                                    <p>Prix du téléphone dans le commerce + forfait sans engagement après 24 mois</p>
+                                </div>                                
+                                <p class="section_center" style="background-color: lightcoral; display: flex; align-items: center; justify-content: center;" id="prix_classique_final"></p>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 3fr 1fr;">
+                                <div style="display: flex; align-items: center;">
+                                    <p id="reponse_total_utilisateur"><span style='text-decoration: underline'>Veuillez remplir les cellules.</span></p>
+                                </div>                                
+                                <p class="section_center" style="background-color: lightcoral; display: flex; align-items: center; justify-content: center;" id="economie_final"></p>
+                            </div>
+                        </div>
+                        <p style="display: flex; align-items: center;" id="message_utilisateur">Une fois les cellules importantes saisies, je pourrai vous donner mon avis 😉</p>
+                    </div>                    
+                </div>
+                <div id="bouton_pdf" style="margin: 20px 0 10px 0; text-align: right;">                    
+                </div>
+            </div>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>

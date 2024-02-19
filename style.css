@@ -1,0 +1,74 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(font-family/ABeeZee-Regular.ttf);
+}
+
+body {
+    font-family: myFirstFont, serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #F2F2F2;
+}
+
+.bulle_informations {
+    z-index: 6;
+    position: relative;
+    background-color: white;
+    border: 1px solid #D7D7D7;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 50px 10% 20px;
+}
+
+.titre {
+    position: absolute;
+    top: -16px;
+    left: 14px;
+    margin: 0;
+    padding: 4px 10px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 3px 4px rgba(216, 214, 214, 0.25);
+}
+
+input {
+    padding: 10px;
+    height: auto;
+    width: 50%;
+    max-width: 100%;
+    margin: 0;
+    border: none;
+    font-size: 16px;     
+}
+
+p {
+    margin: 3px 0;
+    padding: 0 10px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; /* Optionnel - supprime les marges par défaut */  
+}
+
+.section {
+    margin-top: 30px;
+    display: grid;    
+    grid-template-columns: 3fr 1fr 3fr;
+}
+
+.section_center {
+    text-align: center;
+}
+
+@media only screen and (max-width: 600) {    
+    .bulle_informations {        
+        margin: 50px 2% 20px;
+    }
+    .titre {
+        font-size: 20px;
+    }
+  }
+  
