@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: registry.gitlab.com/baptiste.bronsin/prix_operateur:1.0.0
+        image: baraly/operator-price:0.1.0
         ports:
         - containerPort: 80
 ---
